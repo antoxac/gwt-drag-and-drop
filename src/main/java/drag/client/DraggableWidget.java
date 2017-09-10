@@ -16,8 +16,8 @@ public class DraggableWidget extends Composite {
   @UiField(provided = true)
   FlowHolder firstPanel;
 
+  // Holders
   private static String[] FIRST_PANEL_LABELS = {"Drag Me 0", "Drag Me 1", "Drag Me 2", "Drag Me 3"};
-
   private static DragDropLabel label;
   private static int offsetX, offsetY;
 
