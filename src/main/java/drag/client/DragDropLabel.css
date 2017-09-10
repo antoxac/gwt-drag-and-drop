@@ -1,0 +1,12 @@
+.style {
+	width: 132px;
+	padding: 5px 0;
+	cursor: default;
+	color: #3f3f3f;
+	font-size: 14px;
+	background-color: #dbebff;
+}
+
+.hover {
+	background-color: #a2c9f9;
+}

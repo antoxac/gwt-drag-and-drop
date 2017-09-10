@@ -1,0 +1,28 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style type='drag.client.AbsoluteHolder.Style'>
+	.style {
+		padding: 10px 20px;
+	}
+	
+	.name {
+		color: #004fad;
+	}
+	
+	.target {
+		margin: 0 auto;
+		max-width: 572px;
+		height: 200px;
+		background-color: whitesmoke;
+	}
+	
+	.targetHover {
+		border: 1px solid gray;
+	}
+	</ui:style>
+	<g:HTMLPanel styleName="{style.style}">
+		<g:Label text="Absolute Holder" styleName="{style.name}" />
+		<g:AbsolutePanel ui:field="target" styleName="{style.target}" />
+	</g:HTMLPanel>
+</ui:UiBinder> 

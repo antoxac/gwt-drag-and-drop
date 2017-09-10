@@ -1,0 +1,30 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style type='drag.client.FlowHolder.Style'>
+	.style {
+		display: inline-block;
+		vertical-align: top;
+		margin: 6px;
+	}
+	
+	.name {
+		color: #004fad;
+	}
+	
+	.target {
+		min-width: 132px;
+		min-height: 116px; 
+		background-color: whitesmoke;
+		border: 1px solid transparent;
+	}
+	
+	.targetHover {
+		border: 1px solid gray;
+	}
+	</ui:style>
+	<g:HTMLPanel styleName="{style.style}">
+		<g:Label ui:field="name" styleName="{style.name}" />
+		<g:FlowPanel ui:field="target" styleName="{style.target}" />
+	</g:HTMLPanel>
+</ui:UiBinder> 
