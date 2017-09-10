@@ -3,7 +3,4 @@
   <!-- Inherit our applications main module.                      -->
   <inherits name='drag.Drag' />
 
-  <!-- Specify the path to any remote services.                   -->
-  <servlet path="/Drag/greet" class="drag.server.GreetingServiceImpl" />
-
 </module>

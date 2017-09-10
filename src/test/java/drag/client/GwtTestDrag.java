@@ -2,8 +2,6 @@ package drag.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-import drag.shared.FieldVerifier;
-
 /**
  * GWT JUnit <b>integration</b> tests must extend GWTTestCase. Using <code>"GwtTest*"</code> naming
  * pattern exclude them from running with surefire during the test phase.
@@ -20,24 +18,5 @@ public class GwtTestDrag extends GWTTestCase {
   public String getModuleName() {
     return "drag.DragJUnit";
   }
-
-  /**
-   * Tests the FieldVerifier.
-   */
-  public void testFieldVerifier() {
-    assertFalse(FieldVerifier.isValidName(null));
-    assertFalse(FieldVerifier.isValidName(""));
-    assertFalse(FieldVerifier.isValidName("a"));
-    assertFalse(FieldVerifier.isValidName("ab"));
-    assertFalse(FieldVerifier.isValidName("abc"));
-    assertTrue(FieldVerifier.isValidName("abcd"));
-  }
-
-  /**
-   * This test will send a request to the server using the greetServer method in GreetingService and
-   * verify the response.
-   */
-  public void testGreetingService() {}
-
 
 }
