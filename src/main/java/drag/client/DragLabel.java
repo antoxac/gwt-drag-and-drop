@@ -6,10 +6,10 @@ import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.user.client.ui.Label;
 
-public class DragDropLabel extends Label {
+public class DragLabel extends Label {
 
   public interface Style extends ClientBundle {
-    @Source("DragDropLabel.css")
+    @Source("DragLabel.css")
     CSS css();
 
     public interface CSS extends CssResource {
@@ -21,7 +21,7 @@ public class DragDropLabel extends Label {
 
   private static final Style style = GWT.create(Style.class);
 
-  public DragDropLabel(String text) {
+  public DragLabel(String text) {
     super(text);
 
     // Styling
@@ -34,7 +34,7 @@ public class DragDropLabel extends Label {
       int offsetX = e.getNativeEvent().getClientX() - getAbsoluteLeft();
       int offsetY = e.getNativeEvent().getClientY() - getAbsoluteTop();
 
-      DraggableWidget.setDragDropLabel(this, offsetX, offsetY);
+      DragAndDrop.setDragDropLabel(this, offsetX, offsetY);
 
       e.setData("ID", text);
       e.getDataTransfer().setDragImage(getElement(), offsetX, offsetY);
@@ -48,7 +48,5 @@ public class DragDropLabel extends Label {
       removeStyleName(style.css().hover());
     });
   }
-
-
 
 }

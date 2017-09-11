@@ -19,41 +19,39 @@ public class AbsoluteHolder extends Composite {
   }
 
   interface Style extends CssResource {
-    String targetHover();
+    String holderHover();
   }
 
   @UiField
   Style style;
 
   @UiField
-  AbsolutePanel target;
+  AbsolutePanel holder;
 
   public AbsoluteHolder() {
     initWidget(uiBinder.createAndBindUi(this));
 
-    target.addDomHandler(e -> {
+    holder.addDomHandler(e -> {
       // Changing border style on DragOver
-      target.addStyleName(style.targetHover());
+      holder.addStyleName(style.holderHover());
     }, DragOverEvent.getType());
 
-    target.addDomHandler(e -> {
-      target.removeStyleName(style.targetHover());
+    holder.addDomHandler(e -> {
+      holder.removeStyleName(style.holderHover());
     }, DragLeaveEvent.getType());
 
-    target.addDomHandler(e -> {
+    holder.addDomHandler(e -> {
       e.preventDefault();
-      target.removeStyleName(style.targetHover());
+      holder.removeStyleName(style.holderHover());
 
       // Calculating position
-      int x = e.getNativeEvent().getClientX() - target.getAbsoluteLeft() - DraggableWidget.getOffsetX();
-      int y = e.getNativeEvent().getClientY() - target.getAbsoluteTop() - DraggableWidget.getOffsetY();
+      int x = e.getNativeEvent().getClientX() - holder.getAbsoluteLeft() - DragAndDrop.getOffsetX();
+      int y = e.getNativeEvent().getClientY() - holder.getAbsoluteTop() - DragAndDrop.getOffsetY();
 
-      target.add(DraggableWidget.getDragDropLabel(), x, y);
-      DraggableWidget.clearDraggable();
+      holder.add(DragAndDrop.getDragLabel(), x, y);
+      DragAndDrop.clearDragLabel();
 
     }, DropEvent.getType());
   }
-
-
 
 }

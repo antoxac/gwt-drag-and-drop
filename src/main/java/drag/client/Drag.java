@@ -6,8 +6,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 public class Drag implements EntryPoint {
 
   public void onModuleLoad() {
-    // Adding draggable widget
-    RootPanel.get().add(new DraggableWidget());
+    RootPanel.get().add(new DragAndDrop());
   }
 
 }

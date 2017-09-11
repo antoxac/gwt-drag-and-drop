@@ -8,13 +8,10 @@
 	}
 	</ui:style>
 	<g:FlowPanel styleName="{style.style}">
-
 		<d:FlowHolder ui:field="firstPanel" />
 		<d:FlowHolder />
 		<d:FlowHolder />
 		<d:FlowHolder />
-		
 		<d:AbsoluteHolder />
-
 	</g:FlowPanel>
 </ui:UiBinder> 

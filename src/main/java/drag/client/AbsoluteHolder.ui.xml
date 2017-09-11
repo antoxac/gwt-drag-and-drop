@@ -10,19 +10,19 @@
 		color: #004fad;
 	}
 	
-	.target {
+	.holder {
 		margin: 0 auto;
 		max-width: 572px;
 		height: 200px;
 		background-color: whitesmoke;
 	}
 	
-	.targetHover {
+	.holderHover {
 		border: 1px solid gray;
 	}
 	</ui:style>
 	<g:HTMLPanel styleName="{style.style}">
 		<g:Label text="Absolute Holder" styleName="{style.name}" />
-		<g:AbsolutePanel ui:field="target" styleName="{style.target}" />
+		<g:AbsolutePanel ui:field="holder" styleName="{style.holder}" />
 	</g:HTMLPanel>
 </ui:UiBinder> 

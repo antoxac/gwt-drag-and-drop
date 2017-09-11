@@ -20,7 +20,7 @@ public class FlowHolder extends Composite {
   }
 
   interface Style extends CssResource {
-    String targetHover();
+    String holderHover();
   }
 
   @UiField
@@ -30,7 +30,7 @@ public class FlowHolder extends Composite {
   Label name;
 
   @UiField
-  FlowPanel target;
+  FlowPanel holder;
 
   private static String NAME_PREFIX = "Holder ";
   private static int index = 0;
@@ -40,19 +40,19 @@ public class FlowHolder extends Composite {
 
     name.setText(NAME_PREFIX + index++);
 
-    target.addDomHandler(e -> {
+    holder.addDomHandler(e -> {
       // Changing border style on DragOver
-      target.addStyleName(style.targetHover());
+      holder.addStyleName(style.holderHover());
     }, DragOverEvent.getType());
 
-    target.addDomHandler(e -> {
-      target.removeStyleName(style.targetHover());
+    holder.addDomHandler(e -> {
+      holder.removeStyleName(style.holderHover());
     }, DragLeaveEvent.getType());
 
-    target.addDomHandler(e -> {
+    holder.addDomHandler(e -> {
       e.preventDefault();
-      target.removeStyleName(style.targetHover());
-      addLabel(DraggableWidget.getDragDropLabel());
+      holder.removeStyleName(style.holderHover());
+      addLabel(DragAndDrop.getDragLabel());
     }, DropEvent.getType());
   }
 
@@ -60,16 +60,16 @@ public class FlowHolder extends Composite {
     this();
 
     for (String name : names)
-      addLabel(new DragDropLabel(name));
+      addLabel(new DragLabel(name));
   }
 
-  void addLabel(DragDropLabel label) {
+  void addLabel(DragLabel label) {
     // If drag is made outside of GWT check for null
     // This is made for integration with other JS modules
     if (label != null)
-      target.add(label);
+      holder.add(label);
 
-    DraggableWidget.clearDraggable();
+    DragAndDrop.clearDragLabel();
   }
 
 }
